@@ -4,7 +4,7 @@ spring:
   datasource:
     url:
     username:
-    password:
+    password: 
   jackson:
     time-zone: America/Sao_Paulo
   jpa:
