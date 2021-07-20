@@ -8,5 +8,6 @@ interface ActorService {
     fun update(id: Long, actorDto: ActorDto)
     fun getById(id: Long): ActorDto
     fun getAll(): List<ActorDto>
+    fun getByPersonageId(personage_id: Long): List<ActorDto>
 
 }

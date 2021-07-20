@@ -35,6 +35,13 @@ class ActorController {
         ResponseEntity(service.getById(id), HttpStatus.OK)
 
     @GetMapping()
-    fun getAll(): ResponseEntity<List<ActorDto>> =
-            ResponseEntity(service.getAll(), HttpStatus.OK)
+    fun getAllAndByPersonageId(@RequestParam("personage_id") personage_id: Long? = null)
+    : ResponseEntity<Any>{
+        if(personage_id == null){
+            return ResponseEntity(service.getAll(), HttpStatus.OK)
+        }else{
+            return ResponseEntity(service.getByPersonageId(personage_id), HttpStatus.OK)
+        }
+    }
+
 }
